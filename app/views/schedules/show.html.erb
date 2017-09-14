@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 <p>
   <strong>Titile:</strong>
@@ -14,6 +14,13 @@
   <strong>Published:</strong>
   <%= @schedule.published %>
 </p>
+
+<% @schedule.comments.each do |p| %>
+  <tr>
+    <td><%= p.comment%></td><br>
+  </tr>
+<%end%>
+<%= render partial: 'comments/form', locals:{comment: @comment, schedule: @schedule}%>
 
 <%= link_to 'Edit', edit_schedule_path(@schedule) %> |
 <%= link_to 'Back', schedules_path %>

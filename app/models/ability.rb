@@ -6,7 +6,7 @@ class Ability
     #
     user ||= User.new
       if user.id.nil?
-        can [:index, :show], [Schedule]
+        can [:index, :show], [Schedule, User]
       else
         can [:read, :new, :create], [Schedule]
         can [:destroy,:edit, :update], [Schedule], {user_id: user.id}
