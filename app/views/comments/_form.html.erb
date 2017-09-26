@@ -10,19 +10,23 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+  <% if current_user.present? %>
+  <div class="form-group">
     <%= f.label :comment %>
-    <%= f.text_area :comment %>
+    <%= f.text_area :comment%>
   </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
 
   <% if @schedule.present?  %>
     <%= f.hidden_field :schedule_id, value: schedule.id %>
   <%end%>
-
+  <% if user_signed_in?%>
   <%= f.hidden_field :user_id, value: current_user.id %>
+  <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
 <% end %>

@@ -10,6 +10,8 @@ end
 gem 'rails', '~> 5.0.6'
 gem 'devise'
 gem 'cancancan'
+gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap-sass'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
