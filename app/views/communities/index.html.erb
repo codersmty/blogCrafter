@@ -1,0 +1,31 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<h1>communities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titile</th>
+      <th>Content</th>
+      <th>Published</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @communities.each do |community| %>
+      <tr>
+        <td><%= community.name %></td>
+        <td><%= link_to 'Show', community %></td>
+        <td><%= if can? :edit, community
+          link_to 'Edit', edit_community_path(community) end %></td>
+        <td><%= if can? :destroy, community
+          link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } end%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Community', new_community_path %>

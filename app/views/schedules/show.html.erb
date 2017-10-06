@@ -15,12 +15,9 @@
   <%= @schedule.published %>
 </p>
 
-<% @schedule.comments.each do |p| %>
-  <tr>
-    <td><%= p.comment%></td><br>
-  </tr>
-<%end%>
-<%= render partial: 'comments/form', locals:{comment: @comment, schedule: @schedule}%>
+
+<%= render partial: 'communities/form', locals:{community: @community, schedule: @schedule}%>
+<!-- <%= render partial: 'comments/form', locals:{comment: @comment, schedule: @schedule}%> -->
 
 <% if user_signed_in? %>
 <%= link_to 'Edit', edit_schedule_path(@schedule) %> |

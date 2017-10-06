@@ -26,6 +26,8 @@
     <%= f.date_select :published %>
   </div>
 
+    <%= f.hidden_field :community_id, value: community.id %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

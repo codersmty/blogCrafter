@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   resources :comments
   # get 'comments/index'
 
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   resources :schedules
-
+  resources :communities
   resources :users
   root to: "schedules#index"
 

@@ -12,7 +12,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/1
   # GET /schedules/1.json
   def show
-    @comment = Comment.new
+    @community = Community.new
   end
 
   # GET /schedules/new
@@ -73,6 +73,6 @@ class SchedulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
-      params.require(:schedule).permit(:user_id, :titile, :content, :published)
+      params.require(:schedule).permit(:user_id, :titile, :content, :published, :community_id)
     end
 end
